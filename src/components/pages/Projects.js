@@ -38,6 +38,8 @@ function Projects() {
     }, [])
 
     function removeProject(id){
+        setProjectMessage('')
+
         fetch(`http://localhost:5000/projects/${id}`, {
             method:'DELETE',
             headers: {
