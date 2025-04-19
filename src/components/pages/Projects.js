@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import styles from './Project.module.css'
+import styles from './Projects.module.css'
 
 import Message from '../layout/Message'
 import Container from '../layout/Container'
