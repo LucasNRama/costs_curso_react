@@ -19,7 +19,7 @@
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 200,
+      "cost": 700,
       "services": [
         {
           "name": [
@@ -44,6 +44,18 @@
             "faz isso aqui 2"
           ],
           "id": "1c9b7f0b-7d30-41c7-b92e-3dc26e3ff9ab"
+        },
+        {
+          "name": [
+            "Contratar Dev PHP"
+          ],
+          "cost": [
+            "500"
+          ],
+          "description": [
+            "Contratar dev para fazer funcionalidade de enviar emails"
+          ],
+          "id": "2f0f8987-8c00-4877-88cb-54412d621544"
         }
       ]
     }
