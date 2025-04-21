@@ -37,10 +37,6 @@ function Project(){
         }, 300)
     }, [id])
 
-    function removeService(){
-
-    }
-
     function toogleProjectForm(){
         setShowProjectForm(!showProjectForm)
     }
@@ -109,6 +105,36 @@ function Project(){
             setShowProjectForm(false)
             setMessage('Projeto atualizado!')
             setType('success')
+        })
+        .catch((err) => console.log(err))
+    }
+
+    function removeService(id, cost){
+        setMessage('')
+
+        const servicesUpdated = project.services.filter(
+            (service) => service.id !== id
+        )
+
+        const projectUpdated = project
+
+        projectUpdated.services = servicesUpdated
+        projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
+
+        fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(projectUpdated)
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            setProject(projectUpdated)
+            setServices(servicesUpdated)
+            setMessage('Serviço removido com sucesso!')
+            setType('success')
+
         })
         .catch((err) => console.log(err))
     }
